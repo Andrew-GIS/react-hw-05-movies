@@ -9,6 +9,7 @@ export const Header = styled.header`
 display: flex;
 align-items: center;
 padding: 10px;
+background-color: gray;
 > nav {
     display: flex;
   }
@@ -21,7 +22,7 @@ export const Link = styled(NavLink)`
   	color: black;
   	font-weight: 500;
 
-	&:active, :focus, :hover{
+	&:active, :focus{
 		color: white;
 		background-color: orangered;
 	}

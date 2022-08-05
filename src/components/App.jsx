@@ -2,8 +2,7 @@ import { Routes, Route  } from "react-router-dom";
 import { Home } from '../pages/Home';
 import {  Movies  } from '../pages/Movies';
 import { NotFound } from '../pages/NotFound';
-import {Container, Header, Link } from './App.styled';
-
+import { Container, Header, Link } from './App.styled';
 
 export const App = () => {
   return (
