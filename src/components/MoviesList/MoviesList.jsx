@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+// import propTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 import { FilmList, FilmItem } from './MoviesList.styled';
 
