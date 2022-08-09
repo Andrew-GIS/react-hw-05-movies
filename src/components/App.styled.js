@@ -7,6 +7,7 @@ padding: 0 20px;`;
 
 export const Header = styled.header`
 display: flex;
+width: 100%;
 align-items: center;
 padding: 10px;
 background-color: gray;
@@ -22,7 +23,7 @@ export const Link = styled(NavLink)`
   	color: black;
   	font-weight: 500;
 
-	&:active, :focus{
+	&.active{
 		color: white;
 		background-color: orangered;
 	}

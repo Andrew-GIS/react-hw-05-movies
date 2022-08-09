@@ -1,0 +1,47 @@
+h2,
+h3{
+	margin: 0px;
+}
+
+/* body{
+	background-color: #FFE5B4;
+} */
+
+.mainWrapper{
+	display: flex;
+	flex-direction: row;
+	padding: 5px;
+}
+
+.secondaryWrapper{
+	padding: 20px;
+	border: solid 1px black;
+	background-color: aquamarine;
+}
+
+.poster{
+	padding-left: 10px;
+	width: 300px;
+	height: 300px;
+}
+
+.overviewText{
+	font-weight: 400;
+	margin-top: 5px;
+}
+
+.genresWrapper{
+	margin: 0px;
+	padding: 0px;
+	display:inline-flex;
+	list-style-type: none;
+}
+
+.genresWrapperItem{
+	padding: 10px 10px 10px 0px;
+}
+
+.backButton{
+	width: 50px;
+	height: 40px;
+}
