@@ -23,7 +23,8 @@ const MovieDetails = () => {
 
 	return (
 		<>
-			<button className={styles.backButton} type='button'><Link to={location.state?.from??'/'}><AiOutlineArrowLeft/></Link></button>
+			{/* <button className={styles.backButton} type='button'><Link className={styles.backButton} to={location.state?.from ?? '/'}><AiOutlineArrowLeft/></Link></button> */}
+			<Link className={styles.backButton} to={location.state?.from??'/'}><AiOutlineArrowLeft/></Link>
 			<section className={styles.mainWrapper}>	
 				<img className={styles.poster} src={imgURL+movieData.backdrop_path} alt={movieData.original_title} />
 				<div className={styles.secondaryWrapper}>
