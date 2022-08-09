@@ -1,5 +1,5 @@
+import React, { Suspense } from 'react';
 import { Outlet } from "react-router-dom";
-import { Suspense } from "react";
 import { Header, Link } from '../App.styled';
 // import { AiOutlineArrowLeft } from "react-icons/ai";
 // import styles from '../../pages/MovieDetails/MovieDetails';

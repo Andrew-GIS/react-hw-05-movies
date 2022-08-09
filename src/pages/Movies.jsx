@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
-import { useState, useEffect , Outlet} from 'react';
-//import { useSearchParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import {Outlet} from "react-router-dom";
 import { searchMovieByName } from '../services/api';
 import MoviesList from '../components/MoviesList/MoviesList';
 import { Container } from 'components/App.styled';
