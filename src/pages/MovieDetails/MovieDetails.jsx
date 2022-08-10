@@ -17,7 +17,7 @@ const MovieDetails = () => {
     });
 	}, [movieId]);
 
-	if (movieData === undefined) {
+	if (!movieData) {
     		return;
   		}
 

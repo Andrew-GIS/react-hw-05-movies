@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { useState, useEffect } from 'react';
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { useSearchParams } from 'react-router-dom';
 import { searchMovieByName } from '../services/api';
 import MoviesList from '../components/MoviesList/MoviesList';
 import { Container } from 'components/App.styled';
@@ -18,42 +19,33 @@ export const notiflixOptions = Notiflix.Notify.init({
 
 const Movies = () => {
 	const [films, setFilms] = useState([]);
-	const [query, setQuery] = useState('');
+	const [searchParams, setSearchParams] = useSearchParams();
+	const query = searchParams.get('query') ?? '';
 
 	const handleSubmit = event => {
 		event.preventDefault();
 		const query = event.target.elements.query.value.trim().toLowerCase();
 		console.log('query :>> ', query);
-		setQuery(query);
+		setSearchParams(query !== '' ? { query: query } : {});
 	}
 
 	useEffect(() => {
-		// if (query === prevquery) {
-		// 	console.log('equal :>> ');
-		// }
-		if (query) {
-			searchMovieByName({name: query}).then(response => {
+		console.log('useEffect Movives:>> ');
+		if (query === '') {
+			return Notiflix.Notify.warning('Input your query', notiflixOptions,);
+		}
+		searchMovieByName({name: query}).then(response => {
 				setFilms(response.data.results);
 				if (response.data.results.length === 0) {
-					console.log('films.length :>> ', films.length);
-					//setFilms([]);
 					return Notiflix.Notify.warning('No data to show, enter valid query', notiflixOptions,);
 				}
-				console.log('response.data.results :>> ', response.data.results);
-				//console.log('response.data.results :>> ', response.data.results);
 			})
-		}
-		else if (query === '') {
-			return Notiflix.Notify.warning('Input your query', notiflixOptions,);
-			//setFilms([]);
-		}
-		else {
-			return;
-		}
-	},[query, films.length]);
+	},[query]);
 
 	return (
+		
 		<Container>
+			{console.log('films :>> ', films)}
 			<form onSubmit={handleSubmit}>
 				<h1>Search Movie</h1>
 				<input type='text' name='query' autoComplete='off'/>

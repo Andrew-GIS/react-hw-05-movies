@@ -6,7 +6,7 @@ const MoviesList = ({ films }) => {
 	const location = useLocation();
 	return (
 		<FilmList>
-			{films.map(film => {
+			{films.length > 0 && films.map(film => {
 				return (
 					<li key={film.id}>
 						<FilmItem to={`/movies/${film.id}`} state={{from: location}}>
